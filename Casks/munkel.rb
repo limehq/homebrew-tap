@@ -1,8 +1,8 @@
 cask "munkel" do
-  version "0.4.2"
-  sha256 "10ef3edb5fbe97316ddc16fd4ad0bbd1d6298b859b3adafe4a9d2aebc32319c9"
+  version "0.5.0"
+  sha256 "9fbad792b5bb55e3e1bd2025515e2c36d6f35834a016574c198b969d70b119f5"
 
-  url "https://github.com/limehq/munkel/releases/download/v#{version}/Munkel-#{version}.zip",
+  url "https://github.com/limehq/munkel/releases/download/v#{version}/Munkel-#{version}.dmg",
       verified: "github.com/limehq/munkel/"
   name "Munkel"
   desc "Ephemeral whispers that slide out of the MacBook notch"
@@ -16,7 +16,9 @@ cask "munkel" do
   depends_on macos: :sonoma
 
   app "Munkel.app"
-  binary "bin/munkel"
+  # The munkel CLI ships inside the app bundle; expose it on PATH for Homebrew
+  # users. DMG users opt in from the app's "Install Command Line Tool" menu.
+  binary "#{appdir}/Munkel.app/Contents/Resources/munkel"
 
   uninstall quit: "dev.uq.munkel"
 
