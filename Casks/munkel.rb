@@ -1,6 +1,6 @@
 cask "munkel" do
-  version "0.10.0"
-  sha256 "b226d56be3ff8a4d1e79e9d35c1b804ce8a022e9ec5556613feed80b04317916"
+  version "0.11.0"
+  sha256 "07f05654a2e61799b54686b6499ef8015d67799600a81c0c040e51ef1eaa23a4"
 
   url "https://github.com/limehq/munkel/releases/download/v#{version}/Munkel-#{version}.dmg",
       verified: "github.com/limehq/munkel/"
